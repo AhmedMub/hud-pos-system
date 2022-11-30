@@ -1,0 +1,12 @@
+{
+  "resources/js/override-js.js": {
+    "file": "override-js.js",
+    "src": "resources/js/override-js.js",
+    "isEntry": true
+  },
+  "resources/sass/override-css.scss": {
+    "file": "override-css.css",
+    "src": "resources/sass/override-css.scss",
+    "isEntry": true
+  }
+}

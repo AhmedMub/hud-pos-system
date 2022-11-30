@@ -5,8 +5,8 @@ export default defineConfig({
     plugins: [
         laravel({
             input: [
-                'resources/sass/app.scss',
-                'resources/js/app.js',
+                'resources/sass/override-css.scss',
+                'resources/js/override-js.js',
             ],
             refresh: [
                 ...refreshPaths,
@@ -14,4 +14,16 @@ export default defineConfig({
             ],
         }),
     ],
+    build: {
+        outDir: "./public/custom",
+        emptyOutDir: true,
+        sourcemap: true,
+        rollupOptions: {
+            output: {
+                entryFileNames:"[name].js",
+                chunkFileNames:"[name].js",
+                assetFileNames:"[name].[ext]"
+            }
+        }
+    }
 });
