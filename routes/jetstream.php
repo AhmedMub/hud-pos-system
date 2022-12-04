@@ -1,15 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-// use Laravel\Jetstream\Http\Controllers\CurrentTeamController;
-// use Laravel\Jetstream\Http\Controllers\Livewire\ApiTokenController;
-// use Laravel\Jetstream\Http\Controllers\Livewire\PrivacyPolicyController;
-// use Laravel\Jetstream\Http\Controllers\Livewire\TeamController;
-// use Laravel\Jetstream\Http\Controllers\Livewire\TermsOfServiceController;
-// use Laravel\Jetstream\Http\Controllers\Livewire\UserProfileController;
-// use Laravel\Jetstream\Http\Controllers\TeamInvitationController;
-// use Laravel\Jetstream\Jetstream;
-
 use Laravel\Fortify\Features;
 use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 use Laravel\Fortify\Http\Controllers\ConfirmablePasswordController;
@@ -74,16 +65,16 @@ Route::group(['middleware' => config('fortify.middleware', ['web'])], function (
     }
 
     // Registration...
-    if (Features::enabled(Features::registration())) {
-        if ($enableViews) {
-            Route::get('/register', [RegisteredUserController::class, 'create'])
-                ->middleware(['guest:' . config('fortify.guard')])
-                ->name('register');
-        }
+    // if (Features::enabled(Features::registration())) {
+    //     if ($enableViews) {
+    //         Route::get('/register', [RegisteredUserController::class, 'create'])
+    //             ->middleware(['guest:' . config('fortify.guard')])
+    //             ->name('register');
+    //     }
 
-        Route::post('/register', [RegisteredUserController::class, 'store'])
-            ->middleware(['guest:' . config('fortify.guard')]);
-    }
+    //     Route::post('/register', [RegisteredUserController::class, 'store'])
+    //         ->middleware(['guest:' . config('fortify.guard')]);
+    // }
 
     // Email Verification...
     if (Features::enabled(Features::emailVerification())) {
