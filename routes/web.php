@@ -21,6 +21,6 @@ Route::middleware([
 ])->group(function () {
     //choosing system
     Route::controller(HomeController::class)->group(function () {
-        Route::get('/dashboard', 'dashboard');
+        Route::get('/dashboard', function( ){ return view( 'pages/dashboard.dashboard'); });
     });
 });
