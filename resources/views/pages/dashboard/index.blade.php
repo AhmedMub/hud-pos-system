@@ -9,12 +9,7 @@
 </head>
 
 <body>
-    <div>you are logged in successfully</div>
 
-    <form action="logout" method="POST">
-        @csrf
-        <button>get out</button>
-    </form>
 </body>
 
 </html>

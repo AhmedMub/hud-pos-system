@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\Dashboard\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,7 +20,7 @@ Route::middleware([
     'verified'
 ])->group(function () {
     //choosing system
-    Route::controller(DashboardController::class)->group(function () {
+    Route::controller(HomeController::class)->group(function () {
         Route::get('/dashboard', 'dashboard');
     });
 });
