@@ -23,4 +23,8 @@ Route::middleware([
     Route::controller(HomeController::class)->group(function () {
         Route::get('/dashboard', 'dashboard');
     });
+
+
+    Route::resource('profile',\App\Http\Controllers\UserController::class);
+
 });

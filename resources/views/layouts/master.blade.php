@@ -2,29 +2,33 @@
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>HUD | @yield('title','Dashboard')</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700" rel="stylesheet">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{asset('custom/override-css.css')}}">
+    @include('layouts.head')
 
     @livewireStyles
 </head>
 
-<body class="font-sans antialiased bg-light">
+<body class="font-sans antialiased ">
 
-    <!-- Page Content -->
-    <main class="container my-5">
-        @yield('content')
-    </main>
-    <!-- Scripts -->
-    <script src="{{ asset('custom/override-js.js') }}" defer></script>
+    <!-- BEGIN #app -->
+    <div id="app" class="app">
+
+        @include('layouts.header')
+
+        @include('layouts.sidebar')
+
+        <!-- BEGIN mobile-sidebar-backdrop -->
+        <button class="app-sidebar-mobile-backdrop" data-toggle-target=".app"
+            data-toggle-class="app-sidebar-mobile-toggled"></button>
+        <!-- END mobile-sidebar-backdrop -->
+
+      @yield('content')
+
+        <!-- BEGIN btn-scroll-top -->
+        <a href="#" data-toggle="scroll-to-top" class="btn-scroll-top fade"><i class="bi bi-arrow-up"></i></a>
+        <!-- END btn-scroll-top -->
+    </div>
+    <!-- END #app -->
+    @include('layouts.footer')
     @livewireScripts
 </body>
 

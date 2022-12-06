@@ -1,5 +1,4 @@
-@extends('layouts.master')
-@section('content')
+
 <x-jet-authentication-card>
     <x-slot name="logo">
         <x-jet-authentication-card-logo />
@@ -58,4 +57,4 @@
         </form>
     </div>
 </x-jet-authentication-card>
-@endsection
+
