@@ -1,9 +1,13 @@
-@extends('layouts.master')
+@extends('layouts.guest-master')
+@section('title', 'Login')
 @section('content')
-<x-jet-authentication-card>
-    <x-slot name="logo">
-        <x-jet-authentication-card-logo />
-    </x-slot>
+<!-- BEGIN #app -->
+<div id="app" class="app app-full-height app-without-header">
+    <!-- BEGIN login -->
+    <div class="login">
+        <!-- BEGIN login-content -->
+        <div class="login-content">
+            <form action="{{ route('login') }}" method="POST">
 
                 {{--
                 <x-jet-validation-errors class="mb-3 rounded-0" /> --}}
@@ -47,5 +51,8 @@
         </div>
         <!-- END login-content -->
     </div>
-</x-jet-authentication-card>
+    <!-- END login -->
+
+</div>
+<!-- END #app -->
 @endsection
